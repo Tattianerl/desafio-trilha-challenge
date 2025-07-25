@@ -2,18 +2,18 @@
 
 :root {
   --primary-color: #C9F31D;
-  --text-color: #000000;
-  --text-color-h1:#ffffff;
-  --text-color-h2: #000000;
-  --text-color-h3: #ffffff;
+  --text-color-black: #000000;
+  --text-color-white: #ffffff;
   --text-color-p: #ffffff;
-  --bg-color: #000000;
-  --bg-color-sec: #C9F31D;
+  --bg-color-black: #000000;
+  --bg-color-green: #C9F31D;
+  --button-color-green: #C9F31D;
+  --button-color-black: #000000;
   --font-title: 'roboto', sans-serif;
   --font-body: 'roboto', sans-serif;
   --span-color: #c9f31d;
-  --footer-bg: #000;
-  --footer-text: #ffffff;
+  --footer-bg-black: #000000;
+  --footer-text-white: #ffffff;
   --footer-link: blue;
 }
 
@@ -25,14 +25,14 @@
 
 body {
   font-family: var(--font-body);
-  background-color: var(--primary-color);
+  background-color: var(--bg-color-green);
   line-height: 1.6;
 }
 
 header {
   text-align: center;
   padding: 3rem 1rem;
-  background: var(--bg-color);
+  background: var(--bg-color-black);
  
 }
 
@@ -45,7 +45,7 @@ header h1 {
   font-family: var(--font-title);
   font-size: 2.2rem;
   margin-bottom: 0.5rem;
-  color: var(--text-color-h1);
+  color: var(--text-color-white);
 }
 
 header p {
@@ -61,7 +61,7 @@ header p span {
 }
 
 header button {
-  background: var(--primary-color);
+  background: var(--button-color-green);
   color: var(--text-color);
   border: none;
   padding: 0.75rem 1.5rem;
@@ -91,7 +91,7 @@ main h2 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 2rem;
-  color: var(--primary-color);
+  color: var(--bg-color-green);
 }
 
 .cards {
@@ -104,7 +104,7 @@ main h2 {
 }
 
 .card {
-  background: var(--bg-color);
+  background: var(--bg-color-black);
   border-radius: 10px;
   padding: 1.5rem;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
@@ -126,72 +126,69 @@ main h2 {
   color: var(--text-color-p);
 }
 .challenge {
-  background: var(--bg-color);
-  padding: 3rem 2rem;
+  background-color: var(--bg-color-black);
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
 .challenge h2 {
-  color: #ffffff;
-  text-align:left;
-  font-size: 4rem;
-  margin-bottom: 8px;
-  
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: left;
+  color: var(--text-color-white)
 }
-
 
 .challenge-content {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  gap: 1rem; /* diminui a distância */
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .challenge-content figure {
   margin: 0;
-  padding: 0;
 }
 
 .challenge-content img {
-  width: 100%;
-  max-width: 300px; 
+  max-width: 300px;
   height: auto;
-  border-radius: 20px;
+  border-radius: 12px;
   display: block;
 }
 
-
-
-.challenge-content div {
-  max-width: 588px;
-  flex: 1;
-  color: var(--text-color-p);
-  font-size: 1.125rem;
-  line-height: 1.6;
-  text-align: left;
+.challenge-content > div {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.2rem;
+  max-width: 600px;
+}
+
+.challenge-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: left;
+  color: var(--text-color-p)
 }
 
 .challenge button {
-  background: var(--primary-color);
-  color: var(--text-color);
+  background-color: var(--button-color-green);
+  color: var(--text-color-black);
   border: none;
-  padding: 0.75rem 2rem;
+  padding: 0.75rem 1.5rem;
   font-size: 1rem;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s;
-  align-self: flex-start;
-  margin: 0;
+  width: fit-content;
+  transition: background-color 0.3s ease;
 }
-
 
 .challenge button:hover {
-  background: yellowgreen;
+  background-color: yellowgreen;
 }
-
 
 /* Section com cor primária */
 .challenge-section {
@@ -261,8 +258,8 @@ main h2 {
 }
 
 footer {
-  background: var(--footer-bg); 
-  color: var(--footer-text); 
+  background: var(--footer-bg-black); 
+  color: var(--footer-text-white); 
   padding: 3rem 1rem; 
   
 }
@@ -280,57 +277,33 @@ footer {
   gap: 1rem;
 }
 
-
-
-
 /* Responsivo */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .challenge-content {
     flex-direction: column;
     align-items: center;
+    gap: 1.5rem;
     text-align: center;
   }
 
-  .challenge-content img {
-    width: 80%;
-    max-width: 400px;
-  }
-
-  .challenge-content > div {
-    width: 90%;
-  }
-}
-
-@media (max-width: 600px) {
-  .challenge-content img {
-    width: 100%;
-    max-width: 300px;
-  }
-
   .challenge-content > div {
     width: 100%;
-  }
-}
-
-@media (min-width: 768px) {
-  .challenge-content {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.5rem; 
+    padding: 0 1rem;
   }
 
   .challenge-content img {
-    max-width: 300px;
+    max-width: 280px;
+  }
+
+  .challenge-content p,
+  .challenge h2 {
+    text-align: center;
+  }
+
+  .challenge button {
     margin: 0 auto;
   }
-  .challenge-content div {
-    max-width: 600px;
-  }
-
-  .challenge-content p {
-    text-align: left;
-  }
 }
+
 
 
