@@ -1,0 +1,161 @@
+/* Variáveis de cores e fontes */
+:root {
+  --primary-color: #C9F31D;
+  --text-color-black: #000000;
+  --text-color-white: #ffffff;
+  --bg-color-black: #000000;
+  --bg-color-light: #f8f8f8;
+  --font-title: 'Roboto', sans-serif;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-title);
+  background-color: var(--bg-color-black);
+  color: var(--text-color-white);
+  line-height: 1.6;
+}
+
+/* HEADER COM IMAGEM DE FUNDO */
+.header-mentoria {
+  background-image: url('../assets/img/bg-header.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding: 4rem 2rem;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 80vh; 
+  color: #ffffff; 
+}
+
+/* TÍTULO PRINCIPAL */
+.header-mentoria h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 4rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.header-mentoria p {
+  font-size: 1.2rem;
+  color: var(--text-color-white);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* MAIN SECTION */
+.mentoria-section {
+  background-color: var(--bg-color-black);
+  color: var(--text-color-black);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.mentoria-section h2 {
+  color: var(--bg-color-light);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.highlight {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: var(--primary-color);
+  color: var(--text-color-black);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.card img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Botão */
+.btn {
+  display: inline-block;
+  background-color: var(--bg-color-black);
+  color: var(--primary-color);
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: grey;
+}
+
+/* FOOTER */
+.footer-mentoria {
+  background: var(--primary-color);
+  color: var(--text-color-black);
+  text-align: center;
+  padding: 2rem;
+}
+
+.footer-mentoria p {
+  font-size: 30px;
+  margin-bottom: 1rem;
+}
+
+/* Responsividade extra */
+@media (max-width: 768px) {
+  .header-mentoria h1 {
+    font-size: 2.2rem;
+  }
+
+  .mentoria-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .btn {
+    font-size: 0.95rem;
+  }
+}
