@@ -20,6 +20,7 @@ body {
   background-color: var(--bg-color-black);
   color: var(--text-color-white);
   line-height: 1.6;
+  
 }
 
 /* HEADER COM IMAGEM DE FUNDO */
@@ -41,6 +42,61 @@ body {
   color: #ffffff; 
 }
 
+/* Estiliza o modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Área interna do modal */
+.modal-content {
+  position: relative;
+  background-color: #111; 
+  width: 90%;
+  height: 90%;
+  border-radius: 12px;
+  overflow: hidden; 
+  padding: 0;
+}
+
+/* Oculta barra de rolagem interna */
+.modal-content::-webkit-scrollbar {
+  display: none;
+}
+.modal-content {
+  scrollbar-width: none; 
+}
+
+/* Botão de fechar (X) */
+.fechar {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1001;
+  background: transparent;
+  border: none;
+}
+
+/* Iframe ocupa todo espaço do modal */
+.modal-content iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+/* Estilização do cabeçalho da mentoria */
 /* TÍTULO PRINCIPAL */
 .header-mentoria h1 {
   font-family: 'Roboto', sans-serif;
@@ -64,6 +120,7 @@ body {
   color: var(--text-color-black);
   padding: 4rem 2rem;
   text-align: center;
+  overflow: hidden;
 }
 
 .mentoria-section h2 {
@@ -79,19 +136,25 @@ body {
 
 /* Cards */
 .cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  max-width: 1140px;
-  margin: 0 auto;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 1rem;
+  overflow-x: auto; 
+  padding-bottom: 1rem;
+  scrollbar-width: none; 
+}
+.cards::-webkit-scrollbar {
+  display: none; 
 }
 
 .card {
+  flex: 0 0 auto;
+  width: 250px;
   background-color: var(--primary-color);
   color: var(--text-color-black);
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -157,5 +220,9 @@ body {
 
   .btn {
     font-size: 0.95rem;
+  }
+
+  .card {
+    width: 200px;
   }
 }
