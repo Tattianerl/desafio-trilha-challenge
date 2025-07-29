@@ -58,14 +58,16 @@ body {
 
 /* Área interna do modal */
 .modal-content {
-  position: relative;
-  background-color: #111; 
+  
   width: 90%;
+  max-width: 100%;
   height: 90%;
+  max-height: 100%;
+  box-sizing: border-box;
   border-radius: 12px;
-  overflow: hidden; 
-  padding: 0;
+  overflow: hidden;
 }
+
 
 /* Oculta barra de rolagem interna */
 .modal-content::-webkit-scrollbar {
@@ -82,7 +84,7 @@ body {
   right: 16px;
   font-size: 2rem;
   font-weight: bold;
-  color: #fff;
+  color: white;
   cursor: pointer;
   z-index: 1001;
   background: transparent;
@@ -93,9 +95,12 @@ body {
 .modal-content iframe {
   width: 100%;
   height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   border: none;
   display: block;
 }
+
 /* Estilização do cabeçalho da mentoria */
 /* TÍTULO PRINCIPAL */
 .header-mentoria h1 {
@@ -138,24 +143,36 @@ body {
 .cards {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: center;
+  overflow-x: auto;
   gap: 1rem;
-  overflow-x: auto; 
   padding-bottom: 1rem;
-  scrollbar-width: none; 
+  scrollbar-width: none;
+
 }
+
 .cards::-webkit-scrollbar {
-  display: none; 
+  display: none;
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
   flex: 0 0 auto;
-  width: 250px;
+  min-width: 250px; 
+  max-width: 250px;
   background-color: var(--primary-color);
-  color: var(--text-color-black);
-  padding: 1rem;
   border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 1rem;
+  justify-content: space-between; /* mantém o botão no final */
+  min-height: 320px; /* ou ajuste conforme seu conteúdo */
+  align-items: center; /* centraliza conteúdo horizontalmente */
+  text-align: center; /* centraliza texto */
+}
+
+.card img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1rem;
 }
 
 .card:hover {
@@ -189,6 +206,8 @@ body {
   border-radius: 6px;
   font-weight: bold;
   transition: background 0.3s ease;
+  align-self: center; /* centraliza o botão */
+  margin-top: auto;
 }
 
 .btn:hover {
