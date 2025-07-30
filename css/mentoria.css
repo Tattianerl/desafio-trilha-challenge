@@ -154,6 +154,14 @@ body {
   display: none;
 }
 
+.cards-wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
 .card {
   display: flex;
   flex-direction: column;
@@ -163,10 +171,10 @@ body {
   background-color: var(--primary-color);
   border-radius: 8px;
   padding: 1rem;
-  justify-content: space-between; /* mantém o botão no final */
-  min-height: 320px; /* ou ajuste conforme seu conteúdo */
-  align-items: center; /* centraliza conteúdo horizontalmente */
-  text-align: center; /* centraliza texto */
+  justify-content: space-between; 
+  min-height: 320px; 
+  align-items: center; 
+  text-align: center; 
 }
 
 .card img {

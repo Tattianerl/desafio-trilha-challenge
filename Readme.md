@@ -7,7 +7,7 @@ Projeto desenvolvido como parte do desafio **Na Trilha do Dev**, voltado para in
 O projeto está publicado no GitHub Pages:
 
 ## 🔗 Acessar site
-
+[https://desafio-trilha-challenge.vercel.app/](https://desafio-trilha-challenge.vercel.app/)  
 [https://tattianerl.github.io/desafio-trilha-challenge/](https://tattianerl.github.io/desafio-trilha-challenge/)
 
 ## 🚀 Tecnologias Utilizadas
